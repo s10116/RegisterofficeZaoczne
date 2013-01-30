@@ -1,22 +1,24 @@
+/*
 package registerOffice.management;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import registerOffice.businessObjects.cars.Car;
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.clients.Klient;
+import registerOffice.businessObjects.films.Film;
 
 public class DatabaseContext {
 
-	private static List<Person> persons=new ArrayList<Person>();
-	private static List<Car> cars=new ArrayList<Car>();
+	private static List<Klient> persons=new ArrayList<Klient>();
+	private static List<Film> cars=new ArrayList<Film>();
 	
-	public static List<Person> getPersons() {
+	public static List<Klient> getPersons() {
 		return persons;
 	}
-	public static List<Car> getCars() {
+	public static List<Film> getCars() {
 		return cars;
 	}
 	
 	
 }
+*/

@@ -1,4 +1,4 @@
-package registerOffice;
+/*package registerOffice;
 
 public final class Context {
 
@@ -20,7 +20,7 @@ public final class Context {
 		return instance;
 	}
 	
-	public void reduceCars()
+	public void reduceFilms()
 	{
 		this.quantityOfCars--;
 	}
@@ -48,3 +48,4 @@ public final class Context {
 		return this.quantityOfCars;
 	}
 }
+*/

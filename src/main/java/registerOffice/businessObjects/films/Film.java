@@ -1,16 +1,16 @@
-package registerOffice.businessObjects.cars;
+package registerOffice.businessObjects.films;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
+//import registerOffice.Context;
+import registerOffice.businessObjects.clients.Klient;
 
-import registerOffice.Context;
-import registerOffice.businessObjects.persons.Person;
 
 @Entity
-public abstract class Car implements CarInterface{
+public abstract class Film implements FilmInterface{
 
 	@Id
 	@GeneratedValue
@@ -18,26 +18,28 @@ public abstract class Car implements CarInterface{
 	
 	
 	@ManyToOne
-	protected Person owner;
-	
-	@Transient
+	protected Klient owner; //owner alias wew klasy
+
+/*
+	@Transient //adnotacja
 	Context context;
-	public Car(){
-		context =Context.getInstance();
+	public Film(){
+		context =Context.getInstance();  //licznik obiektów w pamięci
 		context.raiseNumberOfCars();
 	}
+*/
 	
 	public void printData()
 	{
 		System.out.println("Owner: "+owner.getName());
-		System.out.println(getCarDetails());
+		System.out.println(getFilmDetails()); //getCarDetails
 	}
 	
-	public abstract String getCarDetails();
+	public abstract String getFilmDetails();
 	
-	public abstract Car Clone();
+	//public abstract Film Clone();
 	
-	public void setOwner(Person owner)
+	public void setOwner(Klient owner)
 	{
 		this.owner=owner;
 	}
@@ -50,10 +52,12 @@ public abstract class Car implements CarInterface{
 		this.id = id;
 	}
 
+/*
 	@Override
 	protected void finalize() throws Throwable {
-		context.reduceCars();
+		context.reduceFilms();
 		super.finalize();
 	}
+*/
 	
 }

@@ -9,10 +9,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import registerOffice.businessObjects.cars.Car;
-import registerOffice.businessObjects.cars.PersonCar;
-import registerOffice.businessObjects.cars.TruckCar;
-import registerOffice.businessObjects.persons.*;
+import registerOffice.businessObjects.clients.*;
+import registerOffice.businessObjects.films.BluRay;
+import registerOffice.businessObjects.films.DVD;
+import registerOffice.businessObjects.films.Film;
 import registerOffice.management.*;
 import registerOffice.management.conditions.Condition;
 import registerOffice.management.conditions.GetByAddressCondition;
@@ -29,23 +29,29 @@ public class Main {
 		
 		Session session = factory.openSession();
 		
-		ManagerInterface<Person> hib= 
+		ManagerInterface<Klient> hib= 
 				new HibernatePersonManager(session);
 				
 		
-		Person adam = new Person("Adam", "1234", "Brzegi 55");
-		Car alfa = new PersonCar("Alfa Romeo","gda1234");
-		Car peugeot = new PersonCar("Pegeot","gda5678");
-		alfa.setOwner(adam);
-		peugeot.setOwner(adam);
-		adam.getCars().add(alfa);
-		adam.getCars().add(peugeot);
+		Klient flem = new Klient("Flem", "80121212123456", "Mila 11");
+		Film td = new DVD("Ted","2013TD");
+		flem.getFilms().add(td);
+		td.setOwner(flem);
+		hib.save(flem);
 		
-		hib.save(adam);
 		
-		List<Person>results = hib.getAll();
+		Klient earl = new Klient("Earl", "81111111111346", "Dobra 22");
+		Film sw = new BluRay("Star","2012SW", "HD"); // yes to HD
+		earl.getFilms().add(sw);
+		sw.setOwner(earl);
+		hib.save(earl); 
 		
-		for(Person p :results)
+		
+		
+		
+		List<Klient>results = hib.getAll();
+		
+		for(Klient p :results)
 		{
 			System.out.println(p.getName());
 		}

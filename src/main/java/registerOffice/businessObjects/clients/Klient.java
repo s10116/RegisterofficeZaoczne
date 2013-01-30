@@ -1,8 +1,7 @@
-package registerOffice.businessObjects.persons;
+package registerOffice.businessObjects.clients;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,27 +14,27 @@ import javax.persistence.Transient;
 import org.hibernate.annotations.NamedQueries;
 import org.hibernate.annotations.NamedQuery;
 
-import registerOffice.Context;
-import registerOffice.businessObjects.cars.*;
+//import registerOffice.Context;
+import registerOffice.businessObjects.films.*;
 
 
-@Entity
-@Table(name = "Osoby")
+@Entity //encja robi z tego tabelę
+@Table(name = "Klient") // Osoby
 @NamedQueries({
 	@NamedQuery(
-			name="Person.all",
-			query="from Person p"
+			name="Klient.all",
+			query="from Klient p"
 			),
 	@NamedQuery(
-			name="Person.id",
-			query="from Person p where id= :id"
+			name="Klient.id",
+			query="from Klient p where id= :id"
 			),
 	@NamedQuery(
-			name="Person.delete",
-			query="Delete from Person p where id=:id"
+			name="Klient.delete",
+			query="Delete from Klient p where id=:id"
 			)
 })
-public class Person {
+public class Klient {
 
 	@Id
 	@GeneratedValue
@@ -45,38 +44,43 @@ public class Person {
 	private String name;
 	
 	@OneToMany(mappedBy="owner", cascade = CascadeType.PERSIST)
-	private List<Car> cars;
+	private List<Film> films;
 	
 	private String pesel;
 	private String address;
 	
-	@Transient
-	Context context;
+	//@Transient
+	//Context context;
 	
-	public Person(String name, String pesel, String address)
+	/*
+	public Klient(String name, String pesel, String address) // do importu z import.sql
 	{
 		this(name,pesel);
 		this.address=address;
 	}
-	public Person(String name, String pesel)
-	{
-		context= Context.getInstance();
-		context.raisenumberOfPeople();
-		this.pesel=pesel;
-		this.name=name;
-		this.cars=new ArrayList<Car>();
-	}
+	*/
 	
-	public Person(String name) {
+	public Klient(String name, String pesel, String address) //public Klient(String name, String pesel)
+	{
+	//	context= Context.getInstance();
+	//	context.raisenumberOfPeople();
+		this.name=name;
+		this.address=address; // było puste
+		this.pesel=pesel;
+		this.films=new ArrayList<Film>();
+	}
+/*	
+	public Klient(String name) {
 		
 		this(name,"");
 	}
 	
-	public Person()
+	public Klient()
 	{
 		
 		this("","");
 	}
+*/
 	
 	public String getName() {
 		return name;
@@ -84,11 +88,11 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Car> getCars() {
-		return cars;
+	public List<Film> getFilms() { 
+		return films;
 	}
-	public void setCars(List<Car> cars) {
-		this.cars = cars;
+	public void setfilms(List<Film> films) {
+		this.films = films;
 	}
 
 	public String getPesel() {
@@ -108,7 +112,7 @@ public class Person {
 	
 	@Override
 	protected void finalize() throws Throwable {
-		context.reducePeople();
+	//	context.reducePeople();
 		super.finalize();
 	}
 

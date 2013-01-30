@@ -1,3 +1,4 @@
+/*
 package registerOffice.management;
 
 import java.sql.Connection;
@@ -9,10 +10,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import registerOffice.businessObjects.persons.Person;
+import registerOffice.businessObjects.clients.Klient;
 
 public class HsqlPersonManager 
-	implements ManagerInterface<Person>
+	implements ManagerInterface<Klient>
 {
 	
 	Connection connection;
@@ -66,13 +67,13 @@ public class HsqlPersonManager
 	}
 	
 	@Override
-	public Person get(int id) {
-		Person result=null;
+	public Klient get(int id) {
+		Klient result=null;
 		try {
 			getPerson.setInt(1, id);
 			ResultSet rs = getPerson.executeQuery();
 			while(rs.next()){
-				result = new Person(rs.getString("name"),rs.getString("pesel"));
+				result = new Klient(rs.getString("name"),rs.getString("pesel"));
 				break;
 			}
 			return result;
@@ -83,14 +84,14 @@ public class HsqlPersonManager
 	}
 
 	@Override
-	public List<Person> getAll() {
+	public List<Klient> getAll() {
 		
-		List<Person> result = new ArrayList<Person>();
+		List<Klient> result = new ArrayList<Klient>();
 		
 		try {
 			ResultSet rs= getAll.executeQuery();
 			while(rs.next())
-				result.add(new Person(rs.getString("Name"),rs.getString("Pesel")));
+				result.add(new Klient(rs.getString("Name"),rs.getString("Pesel")));
 			
 			return result;
 			
@@ -102,7 +103,7 @@ public class HsqlPersonManager
 	}
 
 	@Override
-	public boolean save(Person obj) {
+	public boolean save(Klient obj) {
 		try {
 			savePerson = connection.prepareStatement("" +
 					"INSERT INTO Persons(name,pesel)" +
@@ -120,7 +121,7 @@ public class HsqlPersonManager
 	}
 
 	@Override
-	public boolean delete(Person obj) {
+	public boolean delete(Klient obj) {
 		try {
 			deletePerson.setString(1, obj.getName());
 			deletePerson.executeUpdate();
@@ -134,3 +135,4 @@ public class HsqlPersonManager
 	}
 
 }
+*/
