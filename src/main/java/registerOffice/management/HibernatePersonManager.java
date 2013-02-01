@@ -1,3 +1,5 @@
+
+//pobiera klientow z bazy i ich obsluguje
 package registerOffice.management;
 
 import java.util.List;

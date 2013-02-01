@@ -24,6 +24,8 @@ public class BluRay extends Film{
 			this.HD = HD;
 		}
 
+		
+	//wlasciwosci
 		public String getTitle() {
 			return title;
 		}
@@ -49,13 +51,5 @@ public class BluRay extends Film{
 		}
 		
 	
-	
-/*
-	@Override
-	public Film Clone() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-*/
 }
 

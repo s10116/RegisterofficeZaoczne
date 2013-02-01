@@ -24,6 +24,7 @@ public class VHS extends Film{
 			this.Rew = Rew;
 		}
 
+	//wlasciwosci
 		public String getTitle() {
 			return title;
 		}
@@ -48,14 +49,6 @@ public class VHS extends Film{
 			this.Rew = Rew;
 		}
 		
-	
-	
-/*
-	@Override
-	public Film Clone() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-*/
+
 }
 

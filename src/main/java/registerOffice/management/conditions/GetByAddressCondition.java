@@ -1,4 +1,4 @@
-/*package registerOffice.management.conditions;
+package registerOffice.management.conditions;
 
 import registerOffice.businessObjects.clients.Klient;
 
@@ -17,4 +17,3 @@ public class GetByAddressCondition extends Condition<Klient>{
 	}
 
 }
-*/

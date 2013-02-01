@@ -1,4 +1,4 @@
-/*package registerOffice;
+/*package registerOffice;      //zlicza ilosc zamowien i klientow
 
 public final class Context {
 
