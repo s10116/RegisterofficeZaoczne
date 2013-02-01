@@ -6,7 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import registerOffice.businessObjects.clients.*;
-import registerOffice.businessObjects.films.*; 
+//import registerOffice.businessObjects.films.*; //dubel
 import registerOffice.businessObjects.films.BluRay;
 import registerOffice.businessObjects.films.DVD;
 import registerOffice.businessObjects.films.Film;
