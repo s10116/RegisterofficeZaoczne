@@ -1,0 +1,9 @@
+„Film Rental”
+
+Aplikacja przeznaczona jest do obsługi wypożyczalni kaset VHS, płyt DVD i BluRay.
+
+Pozwala ona na dodawanie, modyfikowanie i wyświetlanie danych klientów oraz informacji o filmach i klientach.
+
+Dzięki możliwości tworzenia bazy danych SQL możemy sprawnie zarządzać kolekcją filmów oraz bazą danych klientów.
+
+ 
