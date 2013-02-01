@@ -13,9 +13,10 @@ import registerOffice.businessObjects.clients.*;
 import registerOffice.businessObjects.films.BluRay;
 import registerOffice.businessObjects.films.DVD;
 import registerOffice.businessObjects.films.Film;
+import registerOffice.businessObjects.films.VHS;
 import registerOffice.management.*;
 import registerOffice.management.conditions.Condition;
-import registerOffice.management.conditions.GetByAddressCondition;
+//import registerOffice.management.conditions.GetByAddressCondition;
 import registerOffice.management.conditions.GetByNameCondition;
 
 public class Main {
@@ -33,18 +34,27 @@ public class Main {
 				new HibernatePersonManager(session);
 				
 		
-		Klient flem = new Klient("Flem", "80121212123456", "Mila 11");
+		//DVD
+		Klient flem = new Klient("Flem kowalski", "80121212123456", "Mila 11");
 		Film td = new DVD("Ted","2013TD");
 		flem.getFilms().add(td);
 		td.setOwner(flem);
 		hib.save(flem);
 		
-		
+		//BluRay
 		Klient earl = new Klient("Earl", "81111111111346", "Dobra 22");
 		Film sw = new BluRay("Star","2012SW", "HD"); // yes to HD
 		earl.getFilms().add(sw);
 		sw.setOwner(earl);
 		hib.save(earl); 
+		
+		
+		//VHS
+		Klient bob = new Klient("rl", "811346", "Dupa 45");
+		Film pupa = new VHS("pupa","2012pup", "yes");
+		bob.getFilms().add(pupa);
+		pupa.setOwner(bob);
+		hib.save(bob); 
 		
 		
 		

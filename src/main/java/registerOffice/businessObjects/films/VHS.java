@@ -3,25 +3,25 @@ package registerOffice.businessObjects.films;
 import javax.persistence.Entity;
 
 @Entity
-public class BluRay extends Film{
+public class VHS extends Film{
 
 	@Override
 	public String getFilmDetails() {
-		return "This is a BluRay.";
+		return "This is a VHS.";
 	}
 	
-	private String HD;
+	private String Rew;
 	private String title;
 	private String serialNumber;
 
 
 	
 	//konstruktory
-		public BluRay(String title, String serialNumber, String HD)
+		public VHS(String title, String serialNumber, String Rew)
 		{
 			this.setTitle(title);
 			this.setSerialNumber(serialNumber);
-			this.HD = HD;
+			this.Rew = Rew;
 		}
 
 		public String getTitle() {
@@ -40,12 +40,12 @@ public class BluRay extends Film{
 			this.serialNumber = serialNumber;
 		}
 	
-		public String getHD() {
-			return HD;
+		public String getRew() {
+			return Rew;
 		}
 
-		public void setHD(String HD) {
-			this.HD = HD;
+		public void setRew(String Rew) {
+			this.Rew = Rew;
 		}
 		
 	

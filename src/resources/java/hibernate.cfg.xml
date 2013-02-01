@@ -27,6 +27,7 @@
     <mapping class="registerOffice.businessObjects.clients.Klient" />
     <mapping class="registerOffice.businessObjects.films.DVD"/>
     <mapping class="registerOffice.businessObjects.films.BluRay"/>
+    <mapping class="registerOffice.businessObjects.films.VHS"/>
     
     </session-factory>
 </hibernate-configuration>

@@ -40,7 +40,7 @@ public class Klient {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name="Imie")
+	@Column(name="Imie_Nazwisko")
 	private String name;
 	
 	@OneToMany(mappedBy="owner", cascade = CascadeType.PERSIST)
